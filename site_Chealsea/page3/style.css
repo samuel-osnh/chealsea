@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.entete {
+    background-color: #001489; 
+    width: 100%;
+    height: auto;
+    left: 0;
+    right: 0;
+    position: fixed;
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 1px 15px gray;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+.navbarlink {
+    list-style: none;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 30px;
+}
+
+.navbarlink a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbarlink a:hover {
+    color: #f1c40f; 
+}
+
+body{
+        background: linear-gradient(135deg, #eae7f0 5%, #0a2091 100%);
+}
+
+.palmares {
+    width: 90%;
+    max-width: 1100px;
+    padding-top: 210px; 
+    margin: 0 auto 60px auto;
+    text-align: center;
+}
+
+.palmares h1 {
+    color: #003399;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.intro {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    color: #333;
+    line-height: 1.7;
+}
+
+
+.trophees {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.trophee {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trophee:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.trophee img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    background-color: #f0f2f5;
+    padding: 15px;
+}
+
+.text {
+    text-align: left;
+    padding: 20px 25px;
+}
+
+.text h3 {
+    color: #003399;
+    margin-bottom: 8px;
+    font-size: 1.4em;
+}
+
+.text p {
+    color: #444;
+    font-size: 1em;
+    margin-bottom: 6px;
+}
+
+.text span {
+    color: #777;
+    font-style: italic;
+    font-size: 0.95em;
+}
+
+.contact-formulaire {
+    width: 90%;
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #f0f4ff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.contact-formulaire h2 {
+    color: #003399;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.contact-formulaire p {
+    color: #444;
+    margin-bottom: 25px;
+    font-size: 1em;
+}
+
+/* Conteneur input + icône */
+.input-icon {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-icon i {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #003399;
+    font-size: 1.2em;
+}
+
+.input-icon input,
+.input-icon textarea {
+    width: 100%;
+    padding: 12px 15px 12px 40px; /* padding-left pour l'icône */
+    border: 2px solid #003399;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-icon input:focus,
+.input-icon textarea:focus {
+    border-color: #1da1f2;
+    box-shadow: 0 0 5px rgba(29,161,242,0.5);
+}
+
+.contact-formulaire form button {
+    background-color: #003399;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-formulaire form button:hover {
+    background-color: #1da1f2;
+    transform: translateY(-2px);
+}
+
+.pied {
+    background-color: #003399;
+    color: #fff;
+    text-align: center;
+    padding: 25px 10px;
+    position: relative;
+}
+
+.pied p {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+
+.socilae {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.socilae a {
+    color: #fff;
+    font-size: 22px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socilae a:hover {
+    color: #1da1f2;
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbarlink {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Palmarès */
+    .trophee {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .trophee img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .text {
+        padding: 15px;
+    }
+
+    /* Formulaire */
+    .contact-formulaire {
+        padding: 20px;
+    }
+
+}
+@media (max-width: 480px) {
+    .navbarlink {
+        font-size: 1.2rem;
+        gap: 10px;
+    }
+
+    .palmares h1 {
+        font-size: 1.6em;
+    }
+
+    .composition h2 {
+        font-size: 24px;
+    }
+
+    .joueur h3 {
+        font-size: 16px;
+    }
+
+    .contact-formulaire h2 {
+        font-size: 1.5em;
+    }
+}

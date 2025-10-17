@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+.entete {
+    background-color: #001489; 
+    width: 100%;
+    height: auto;
+    left: 0;
+    right: 0;
+    position: fixed;
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 1px 15px gray;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+.navbarlink {
+    list-style: none;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 30px;
+}
+
+.navbarlink a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbarlink a:hover {
+    color: #f1c40f; 
+}
+
+
+.accueille {
+    padding-top: 20px; 
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    background: url('/page1/image/16815621090490.jpg') center/cover no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(241, 241, 240);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero_text {
+    position: relative;
+    z-index: 1;
+    font-size: 1.8rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1.8s ease-out forwards;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Animation fade */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.presentation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 10%;
+    background-color: #ffffff;
+}
+
+.presentation_texte {
+    flex: 1;
+}
+
+.presentation_texte h2 {
+    font-size: 28px;
+    color: #003399;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-left: 5px solid #003399;
+    padding-left: 10px;
+}
+
+.presentation_texte p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.presentation_image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.presentation_image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    border: 3px solid #003399;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.presentation_image img:hover {
+    transform: scale(1.05);
+}
+
+.maillots {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+}
+
+.maillots h2 {
+    font-size: 28px;
+    color: #003399; 
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.maillots_conteiner {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.maillot {
+    width: 280px;
+    background-color: #fff;
+    border: 2px solid #003399; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.maillot img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.maillot h3 {
+    color: #003399;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.maillot p {
+    color: #555;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.maillot:hover {
+    transform: translateY(-8px);
+    border-color: #1a66ff;
+    box-shadow: 0 6px 15px rgba(0, 51, 153, 0.3);
+}
+
+
+.news {
+    background-color: #f0f4ff;
+    padding: 60px 10%;
+}
+
+.news h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #003399;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.news article {
+    background-color: #fff;
+    border: 2px solid #003399;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news article:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 15px rgba(0, 51, 153, 0.3);
+}
+
+.news h3 {
+    color: #003399;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.news p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+.pied {
+    background-color: #003399;
+    color: #fff;
+    text-align: center;
+    padding: 25px 10px;
+    position: relative;
+}
+
+.pied p {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+
+.socilae {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.socilae a {
+    color: #fff;
+    font-size: 22px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socilae a:hover {
+    color: #1da1f2;
+    transform: scale(1.2);
+}
+
+/* ===========================
+   ANIMATION D’APPARITION DES SECTIONS
+=========================== */
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease-out forwards;
+}
+
+section:nth-of-type(2) { animation-delay: 0.3s; }
+section:nth-of-type(3) { animation-delay: 0.6s; }
+section:nth-of-type(4) { animation-delay: 0.9s; }
+
+/* Media quiery : respensiviter */
+@media (max-width: 900px) {
+    .navbarlink {
+        font-size: 1.2rem;
+        gap: 15px;
+    }
+
+    .presentation {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 5px;
+    }
+
+    .presentation_texte h2 {
+        border-left: none;
+        border-bottom: 3px solid #003399;
+        padding-left: 0;
+        padding-bottom: 5px;
+    }
+
+    .maillots_conteiner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .entete {
+        position: relative; /* pour éviter que le header fixe cache le contenu */
+    }
+    @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbarlink {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .joueur {
+        width: 60%;
+        padding: 15px;
+    }
+
+    .joueur h3 {
+        font-size: 16px;
+    }
+
+    .joueur h3 samp {
+        font-size: 18px;
+    }
+}
+}
