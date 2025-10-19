@@ -46,3 +46,9 @@ window.addEventListener("click", (e) => {
         modal.style.display = "none";
     }
 });
+const menuToggle = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.navbarlink');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});

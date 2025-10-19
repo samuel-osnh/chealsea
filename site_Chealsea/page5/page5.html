@@ -12,6 +12,12 @@
             <div class="logo">
                 <img src="../page1/image/chealsea.png" alt="Logo Chelsea FC">
             </div>
+            <!-- Bouton hamburger pour mobile -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="navbarlink">
                 <li><a href="../page1/index.html">Accueil</a></li>
                 <li><a href="../page2/page2.html">Équipe</a></li>
@@ -87,6 +93,62 @@
 
     </main>
 
+    <main class="field">
+
+        <!-- ligne de terrain -->
+        <div class="midline"></div>
+        <div class="center_circle"></div>
+        <div class="goal_left"></div>
+        <div class="goal_right"></div>
+
+         <div class="player goalkeeper">
+            <img src="../page5/image/cesh.jpg" alt="petr cech">
+            <span>Petr Cech</span> 
+        </div>
+        <div class="player defender left_back">
+            <img src="../page5/image/ashley.jpg" alt="ashley cole">
+            <span>Ashley Cole</span> 
+        </div>
+        <div class="player defender center_back_left">
+            <img src="../page5/image/cesar.jpg" alt="cesar azpilicueta">
+            <span>César Azpilicueta</span> 
+        </div>
+        <div class="player defender center_back_right">
+            <img src="../page5/image/terry.jpg" alt="john terry">
+            <span>Jonh Terry</span> 
+        </div>
+        <div class="player defender right_back">
+            <img src="../page5/image/ivanovic.jpg" alt="branislav ivanovic">
+            <span>Branislav Ivanovic</span> 
+        </div>
+
+        <div class="player midfielder left_mid">
+            <img src="../page5/image/wise.jpg" alt="dennis wise">
+            <span>Dennis Wise</span> 
+        </div>
+        <div class="player midfielder center_mid">
+            <img src="../page5/image/kante.jpg" alt="n'golo kante">
+            <span>N'golo Kanté</span> 
+        </div>
+        <div class="player midfielder right_mid">
+            <img src="../page5/image/frank.jpg" alt="frank lampard">
+            <span>Frank Lampard</span> 
+        </div>
+
+        <div class="player forward left_wing">
+            <img src="../page5/image/zola.jpg" alt="gianfranco zola">
+            <span>Gianfranco Zola</span> 
+        </div>
+        <div class="player forward striker">
+            <img src="../page5/image/didier.jpg" alt="didier drogba">
+            <span>Didier Drogba</span> 
+        </div>
+        <div class="player forward right_wing">
+            <img src="../page5/image/eden.jpg" alt="eden hazard">
+            <span>Eden Hazard</span>
+        </div>
+    </main>
+
     <footer class="pied">
         <p>&copy; 2025 Chelsea FC – Site fan réalisé par OSNH</p>
         <div class="sociale">
@@ -95,5 +157,14 @@
             <a href="#"><i class="fab fa-x-twitter"></i></a>
         </div>
     </footer>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.navbarlink');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

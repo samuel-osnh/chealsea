@@ -75,6 +75,22 @@
     width: 100%;
 }
 
+/* ======== Bouton hamburger ======== */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
 /* ======= Main Article ======= */
 .article-legendes {
     width: 90%;
@@ -134,6 +150,111 @@
     color: #333;
 }
 
+/* Terrain */
+.field {
+    position: relative;
+    width: 95%;
+    max-width: 1700px;
+    aspect-ratio: 9/16;
+    margin: 20px auto;
+    background: #2e8b57;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+/* Lignes de côté */
+.field::before, .field::after {
+    content: '';
+    position: absolute;
+    border: 3px solid white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 0; /* pas d'arrondi pour les lignes de côté */
+}
+
+/* Ligne médiane */
+.midline {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+}
+
+/* Cercle central */
+.center_circle {
+    position: absolute;
+    width: 12%;
+    aspect-ratio: 1/1;
+    border: 3px solid white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Surface de but */
+.goal_left {
+    position: absolute;
+    top: 0;
+    left: 30%;
+    width: 40%;
+    height: 9%;
+    border: 3px solid white;
+}
+
+.goal_right {
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    width: 40%;
+    height: 9%;
+    border: 3px solid white;
+}
+
+/* Joueurs */
+.player {
+    position: absolute;
+    text-align: center;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+
+.player img {
+    width: 10vw;       /* largeur fixe */
+    height: 19vw;      /* hauteur fixe */
+    border-radius: 15%;
+    border: 2px solid white;
+    box-shadow: 0 0 5px black;
+    object-fit: cover;
+}
+
+.player span {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.8rem;
+}
+
+/* Position joueurs */
+.goalkeeper { bottom: 5%; left: 50%; }
+
+.left_back { bottom: 30%; left: 20%; }
+.center_back_left { bottom: 30%; left: 40%; }
+.center_back_right { bottom: 30%; left: 60%; }
+.right_back { bottom: 30%; left: 80%; }
+
+.left_mid { bottom: 55%; left: 25%; }
+.center_mid { bottom: 55%; left: 50%; }
+.right_mid { bottom: 55%; left: 75%; }
+
+.left_wing { bottom: 80%; left: 30%; }
+.striker { bottom: 80%; left: 50%; }
+.right_wing { bottom: 80%; left: 70%; }
+
+
 /* ======= Pied de page ======= */
 .pied {
     background-color: #001489;
@@ -166,7 +287,7 @@
 
 
 /* ======= Responsive ======= */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
     .section-legende {
         gap: 20px;
     }
@@ -175,54 +296,81 @@
         width: 200px;
         height: 200px;
     }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 10px;
+    .menu-toggle {
+        display: flex;
     }
 
     .navbarlink {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: none; /* caché par défaut */
+        flex-direction: column;
         gap: 15px;
-    }
-
-    .section-legende {
-        flex-direction: column;
+        width: 100%;
         text-align: center;
+        background-color: #001489;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px 0;
+        border-radius: 0 0 10px 10px;
+        z-index: 999;
     }
 
-    .section-legende .texte-image.droite,
-    .section-legende .texte-image.gauche {
+    .navbarlink.active {
+        display: flex; /* affiché quand on clique */
+    }
+
+    .navbarlink li {
+        margin: 10px 0;
+    }
+    .section-legende .texte-image.gauche{
         flex-direction: column;
     }
+    .section-legende .texte-image.droite{
+        flex-direction: column;
+    }
+    .field{
+        max-width: 2000px;
+    }
+    .field {
+        width: 100%;
+        margin: 100px auto;
+    }
 
-    .section-legende img {
-        width: 220px;
-        height: 220px;
-        margin-bottom: 15px;
+    .player img {
+        width: 50%; /* sur petit écran, joueurs visibles */
+    }
+
+    .player span {
+        font-size: 0.7rem;
+    }
+
+    .goal_area_left, .goal_area_right {
+        width: 25%;
+        height: 10%;
+    }
+
+    .center_circle {
+        width: 15%;
     }
 }
 
-@media (max-width: 480px) {
-    .article-legendes h1 {
-        font-size: 2rem;
-        margin-bottom: 30px;
+@media (max-width: 600px) {
+    .player img {
+        width: 100%; /* sur mobile, joueurs visibles */
     }
 
-    .section-legende img {
-        width: 180px;
-        height: 180px;
+    .player span {
+        font-size: 0.6rem;
     }
 
-    .section-legende p {
-        font-size: 1rem;
+    .goal_area_left, .goal_area_right {
+        width: 30%;
+        height: 8%;
     }
 
-    .navbarlink {
-        font-size: 0.9rem;
-        gap: 10px;
+    .center_circle {
+        width: 18%;
     }
 }
+
+

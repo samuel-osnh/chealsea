@@ -74,6 +74,22 @@
 .navbarlink a.active::after {
     width: 100%;
 }
+
+/* ======== Bouton hamburger ======== */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
 .article-histoire {
     width: 90%;
     max-width: 1100px;
@@ -152,12 +168,38 @@
 }
 
 /* Responsivité */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
     .texte-image {
         flex-direction: column;
         text-align: center;
     }
     .texte-image img, .texte-image p {
         width: 100%;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbarlink {
+        display: none; /* caché par défaut */
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        text-align: center;
+        background-color: #001489;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px 0;
+        border-radius: 0 0 10px 10px;
+        z-index: 999;
+    }
+
+    .navbarlink.active {
+        display: flex; /* affiché quand on clique */
+    }
+
+    .navbarlink li {
+        margin: 10px 0;
     }
 }

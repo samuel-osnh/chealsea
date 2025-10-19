@@ -1,3 +1,14 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    transition: all 0.3s ease-in-out;
+}
+body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
 .entete {
     background-color: #001489;
     width: 100%;
@@ -98,6 +109,7 @@
     font-size: 2.5rem;
     margin-bottom: 10px;
     text-transform: uppercase;
+    font-size: clamp(1.5rem, 4vw, 3rem);
 }
 
 /* ======== Filtres ======== */
@@ -120,7 +132,7 @@
 
 .filtre-btn.active,
 .filtre-btn:hover {
-    background: #001489;
+    background: #2741d4;
     color: white;
 }
 
@@ -142,8 +154,11 @@
 
 .joueur img {
     width: 100%;
+    height: auto;
     display: block;
     transition: transform 0.5s ease;
+    height: auto;
+    object-fit: cover;
 }
 
 .joueur:hover img {
@@ -224,9 +239,25 @@ footer .sociale a:hover {
     margin-bottom: 15px;
 }
 
+/* ======== Bouton hamburger ======== */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
 .modal-header img {
     width: 120px;
-    height: 120px;
+    height: auto;
     border-radius: 10%;
     object-fit: center;
     margin-bottom: 10px;
@@ -258,23 +289,46 @@ footer .sociale a:hover {
     .banniere {
         height: 350px;
     }
-
     .joueurs_conteneur {
         padding: 0 20px 50px;
         gap: 20px;
     }
 }
 
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 10px;
+@media (max-width: 908px) {
+    body{
+        padding-top: 130px;
+    }
+    .menu-toggle {
+        display: flex;
     }
 
     .navbarlink {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: none; /* caché par défaut */
+        flex-direction: column;
         gap: 15px;
+        width: 100%;
+        text-align: center;
+        background-color: #001489;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px 0;
+        border-radius: 0 0 10px 10px;
+        z-index: 999;
+    }
+
+    .navbarlink.active {
+        display: flex; /* affiché quand on clique */
+    }
+
+    .navbarlink li {
+        margin: 10px 0;
+    }
+    .presentation {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 33px;
     }
 
     .banniere {
@@ -286,20 +340,3 @@ footer .sociale a:hover {
     }
 }
 
-@media (max-width: 480px) {
-    .banniere {
-        height: 220px;
-    }
-
-    .banniere-contenu h1 {
-        font-size: 1.8rem;
-    }
-
-    .joueur img {
-        height: auto;
-    }
-
-    .overlay h3 {
-        font-size: 1rem;
-    }
-}
