@@ -1,20 +1,23 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
 }
 .entete {
-    background-color: #001489; 
+    background-color: #001489;
     width: 100%;
-    height: auto;
-    left: 0;
-    right: 0;
     position: fixed;
-    color: white;
+    top: 0;
+    left: 0;
     padding: 10px 0;
-    box-shadow: 0 1px 15px gray;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.2);
     z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.entete:hover {
+    background-color: #0023b3;
 }
 
 .navbar {
@@ -22,30 +25,54 @@
     justify-content: space-between;
     align-items: center;
     width: 90%;
+    max-width: 1200px;
     margin: auto;
 }
 
 .logo img {
-    width: 80px;
+    width: 90px;
     height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
 }
 
 .navbarlink {
     list-style: none;
-    font-size: 1.5rem;
     display: flex;
     gap: 30px;
+    font-size: 1.2rem;
 }
 
 .navbarlink a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    transition: color 0.3s;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
+.navbarlink a.active,
 .navbarlink a:hover {
-    color: #f1c40f; 
+    color: #f1c40f;
+}
+
+.navbarlink a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #f1c40f;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.navbarlink a:hover::after,
+.navbarlink a.active::after {
+    width: 100%;
 }
 
 
@@ -56,7 +83,7 @@
 .hero {
     position: relative;
     text-align: center;
-    background: url('/site_Chealsea/page1/image/16815621090490.jpg') center/cover no-repeat;
+    background: url('../page1/image/16815621090490.jpg') center/cover no-repeat;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -244,7 +271,7 @@
 
 .pied {
     background-color: #003399;
-    color: #fff;
+    color: #e7d8d8;
     text-align: center;
     padding: 25px 10px;
     position: relative;
@@ -258,6 +285,7 @@
 
 .sociale {
     display: flex;
+    color: #878e97;
     justify-content: center;
     gap: 20px;
 }
@@ -268,7 +296,7 @@
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.sociala a:hover {
+.sociale a:hover {
     color: #1da1f2;
     transform: scale(1.2);
 }
@@ -286,57 +314,49 @@ section:nth-of-type(2) { animation-delay: 0.3s; }
 section:nth-of-type(3) { animation-delay: 0.6s; }
 section:nth-of-type(4) { animation-delay: 0.9s; }
 
-/* Media quiery : respensiviter */
-@media (max-width: 900px) {
-    .navbarlink {
-        font-size: 1.2rem;
-        gap: 15px;
+/* Hamburger menu */
+.menu-toggle {
+    display: none; /* affiché seulement sur mobile */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+/* Media query mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
     }
 
-    .presentation {
+    .navbarlink {
+        display: none; /* caché par défaut */
         flex-direction: column;
+        gap: 15px;
+        width: 100%;
         text-align: center;
-        padding-top: 5px;
+        background-color: #001489;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px 0;
+        border-radius: 0 0 10px 10px;
+        z-index: 999;
     }
 
-    .presentation_texte h2 {
-        border-left: none;
-        border-bottom: 3px solid #003399;
-        padding-left: 0;
-        padding-bottom: 5px;
+    .navbarlink.active {
+        display: flex; /* affiché quand on clique */
     }
 
-    .maillots_conteiner {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .entete {
-        position: relative; /* pour éviter que le header fixe cache le contenu */
-    }
-    @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .navbarlink {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .joueur {
-        width: 60%;
-        padding: 15px;
-    }
-
-    .joueur h3 {
-        font-size: 16px;
-    }
-
-    .joueur h3 samp {
-        font-size: 18px;
+    .navbarlink li {
+        margin: 10px 0;
     }
 }
-}
+

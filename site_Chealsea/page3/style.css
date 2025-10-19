@@ -1,21 +1,17 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+.entete {
+    background-color: #001489;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
 }
 
-.entete {
-    background-color: #001489; 
-    width: 100%;
-    height: auto;
-    left: 0;
-    right: 0;
-    position: fixed;
-    color: white;
-    padding: 10px 0;
-    box-shadow: 0 1px 15px gray;
-    z-index: 1000;
+.entete:hover {
+    background-color: #0023b3;
 }
 
 .navbar {
@@ -23,206 +19,170 @@
     justify-content: space-between;
     align-items: center;
     width: 90%;
+    max-width: 1200px;
     margin: auto;
 }
 
 .logo img {
-    width: 80px;
+    width: 90px;
     height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
 }
 
 .navbarlink {
     list-style: none;
-    font-size: 1.5rem;
     display: flex;
     gap: 30px;
+    font-size: 1.2rem;
 }
 
 .navbarlink a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    transition: color 0.3s;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
+.navbarlink a.active,
 .navbarlink a:hover {
-    color: #f1c40f; 
+    color: #f1c40f;
 }
 
-body{
-        background: linear-gradient(135deg, #eae7f0 5%, #0a2091 100%);
+.navbarlink a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #f1c40f;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
 }
 
+.navbarlink a:hover::after,
+.navbarlink a.active::after {
+    width: 100%;
+}
+
+/* ====== Palmarès ====== */
 .palmares {
     width: 90%;
-    max-width: 1100px;
-    padding-top: 210px; 
-    margin: 0 auto 60px auto;
+    max-width: 1200px;
+    margin: 180px auto 60px auto;
     text-align: center;
 }
 
 .palmares h1 {
+    font-size: 2.5em;
     color: #003399;
-    font-size: 2em;
     margin-bottom: 20px;
 }
 
 .intro {
     font-size: 1.1em;
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto 50px auto;
-    color: #333;
+    color: #444;
     line-height: 1.7;
 }
 
-
+/* ====== Cartes trophées ====== */
 .trophees {
     display: flex;
-    flex-direction: column;
-    gap: 35px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
-.trophee {
-    display: flex;
-    align-items: center;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.trophee:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.trophee img {
-    width: 180px;
-    height: 180px;
-    object-fit: contain;
-    background-color: #f0f2f5;
-    padding: 15px;
-}
-
-.text {
-    text-align: left;
-    padding: 20px 25px;
-}
-
-.text h3 {
-    color: #003399;
-    margin-bottom: 8px;
-    font-size: 1.4em;
-}
-
-.text p {
-    color: #444;
-    font-size: 1em;
-    margin-bottom: 6px;
-}
-
-.text span {
-    color: #777;
-    font-style: italic;
-    font-size: 0.95em;
-}
-
-.contact-formulaire {
-    width: 90%;
-    max-width: 600px;
-    margin: 60px auto;
-    padding: 30px;
-    background-color: #f0f4ff;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.contact-formulaire h2 {
-    color: #003399;
-    margin-bottom: 15px;
-    font-size: 1.8em;
-}
-
-.contact-formulaire p {
-    color: #444;
-    margin-bottom: 25px;
-    font-size: 1em;
-}
-
-/* Conteneur input + icône */
-.input-icon {
-    position: relative;
-    margin-bottom: 15px;
-}
-
-.input-icon i {
-    position: absolute;
-    top: 50%;
-    left: 12px;
-    transform: translateY(-50%);
-    color: #003399;
-    font-size: 1.2em;
-}
-
-.input-icon input,
-.input-icon textarea {
-    width: 100%;
-    padding: 12px 15px 12px 40px; /* padding-left pour l'icône */
-    border: 2px solid #003399;
-    border-radius: 8px;
-    font-size: 1em;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.input-icon input:focus,
-.input-icon textarea:focus {
-    border-color: #1da1f2;
-    box-shadow: 0 0 5px rgba(29,161,242,0.5);
-}
-
-.contact-formulaire form button {
-    background-color: #003399;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-size: 1em;
+.carte-trophee {
+    width: 250px;
+    height: 350px;
+    perspective: 1000px;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-.contact-formulaire form button:hover {
-    background-color: #1da1f2;
-    transform: translateY(-2px);
+.carte-trophee .face {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.8s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
+.carte-trophee .front {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    transform: rotateY(0deg);
+}
+
+.carte-trophee .front img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.carte-trophee .front h3 {
+    color: #003399;
+    font-size: 1.3em;
+}
+
+.carte-trophee .back {
+    background-color: #f0f4ff;
+    transform: rotateY(180deg);
+    padding: 20px;
+    text-align: left;
+}
+
+.carte-trophee .back p {
+    font-size: 0.95em;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.carte-trophee .back span {
+    font-style: italic;
+    color: #777;
+}
+
+.carte-trophee:hover .front {
+    transform: rotateY(-180deg);
+}
+
+.carte-trophee:hover .back {
+    transform: rotateY(0deg);
+}
+
+/* ====== Footer ====== */
 .pied {
     background-color: #003399;
     color: #fff;
     text-align: center;
     padding: 25px 10px;
-    position: relative;
 }
-
-.pied p {
-    margin-bottom: 10px;
-    font-size: 15px;
-}
-
 
 .socilae {
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin-top: 10px;
 }
 
 .socilae a {
     color: #fff;
     font-size: 22px;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .socilae a:hover {
@@ -230,41 +190,25 @@ body{
     transform: scale(1.2);
 }
 
-@media (max-width: 768px) {
-
-    /* Navbar */
-    .navbar {
-        flex-direction: column;
-        gap: 10px;
+/* ====== Responsive ====== */
+@media (max-width: 1024px) {
+    .trophees {
+        gap: 20px;
     }
-
-    .navbarlink {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    /* Palmarès */
-    .trophee {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .trophee img {
-        width: 140px;
-        height: 140px;
-    }
-
-    .text {
-        padding: 15px;
-    }
-
-    /* Formulaire */
-    .contact-formulaire {
-        padding: 20px;
-    }
-
 }
+
+@media (max-width: 768px) {
+    .trophees {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carte-trophee {
+        width: 300px;
+        height: 360px;
+    }
+}
+
 @media (max-width: 480px) {
     .navbarlink {
         font-size: 1.2rem;
@@ -272,18 +216,6 @@ body{
     }
 
     .palmares h1 {
-        font-size: 1.6em;
-    }
-
-    .composition h2 {
-        font-size: 24px;
-    }
-
-    .joueur h3 {
-        font-size: 16px;
-    }
-
-    .contact-formulaire h2 {
-        font-size: 1.5em;
+        font-size: 1.8em;
     }
 }

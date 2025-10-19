@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Club Chelsea FC</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="/fontawesome-free-7.0.1-web/css/all.css">
+    <link rel="stylesheet" href="../fontawesome-free-7.0.1-web/css/all.css">
 </head>
 <body>
     <header class="entete">
         <nav class="navbar">
             <div class="logo">
-                <img src="/site_Chealsea/page1/image/chealsea.png" alt="Logo du club Chelsea FC">
+                <img src="../page1/image/chealsea.png" alt="Logo du club Chelsea FC">
+            </div>
+            <!-- Bouton hamburger pour mobile -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
             <ul class="navbarlink">
-                <li><a href="/site_Chealsea/page1/index.html">Accueil</a></li>
-                <li><a href="/site_Chealsea/page2/page2.html">Équipe</a></li>
-                <li><a href="/site_Chealsea/page3/page3.html">Palmarès</a></li>
+                <li><a href="../page1/index.html">Accueil</a></li>
+                <li><a href="../page2/page2.html">Équipe</a></li>
+                <li><a href="../page3/page3.html">Palmarès</a></li>
+                <li><a href="../page4/page4.html">Histoire</a></li>
+                <li><a href="../page5/page5.html">Légendes</a></li>
             </ul>
         </nav>
     </header>
@@ -43,7 +51,7 @@
                 </p>
            </div>
            <div class="presentation_image">
-            <img src="/site_Chealsea/page1/image/London_Stamford_Bridge.jpg" alt="Stand ford bridge">
+            <img src="../page1/image/London_Stamford_Bridge.jpg" alt="Stand ford bridge">
            </div>
         </section>
 
@@ -51,21 +59,21 @@
             <h2> Maillots officiels de la saison 2025-2026</h2>
             <div class="maillots_conteiner">
                 <div class="maillot">
-                    <img src="/site_Chealsea/page1/image/home-removebg-preview.png" alt="Maillot domicille de 25 26">
+                    <img src="../page1/image/home-removebg-preview.png" alt="Maillot domicille de 25 26">
                     <h3>Maillot domicille</h3>
                     <p>
                         Bleu royal avec détails blancs et rouges. Un design hommage à l’ouest londonien.
                     </p>
                 </div>
                 <div class="maillot">
-                    <img src="/site_Chealsea/page1/image/away-removebg-preview.png" alt="Maillot domicille de 25 26">
+                    <img src="../page1/image/away-removebg-preview.png" alt="Maillot domicille de 25 26">
                     <h3>Maillot exterieur</h3>
                     <p>
                         Blanc “Phantom” avec des accents vert militaire et rouge vif pour un style moderne.
                     </p>
                 </div>
                 <div class="maillot">
-                    <img src="/site_Chealsea/page1/image/third-removebg-preview.png" alt="Maillot domicille de 25 26">
+                    <img src="../page1/image/third-removebg-preview.png" alt="Maillot domicille de 25 26">
                     <h3>Troisième maillot</h3>
                     <p>
                         Noir avec des logos argentés et des touches de bleu clair, rappelant l’ère 2000.
@@ -96,11 +104,21 @@
         <p>
             &copy; 2025 Chelsea FC – Site fan réalisé par OSNH
         </p>
-        <div class="socialee">
+        <div class="sociale">
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
             <a href="#"><i class="fab fa-x-twitter"></i></a>
         </div>
     </footer>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.navbarlink');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
 </body>
 </html>

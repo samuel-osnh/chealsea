@@ -1,170 +1,320 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Équipe - Chelsea FC</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/fontawesome-free-7.0.1-web/css/all.css">
-    <title>Document</title>
 </head>
+
 <body>
-    <header>
-      <header class="entete">
+    <!-- ====== En-tête ====== -->
+    <header class="entete">
         <nav class="navbar">
             <div class="logo">
-                <img src="/site_Chealsea/page1/image/chealsea.png" alt="Logo du club Chelsea FC">
+                <img src="../page1/image/chealsea.png" alt="Logo du club Chelsea FC">
             </div>
             <ul class="navbarlink">
-                <li><a href="/site_Chealsea/page1/index.html">Accueil</a></li>
-                <li><a href="/site_Chealsea/page2/page2.html">Équipe</a></li>
-                <li><a href="/site_Chealsea/page3/page3.html">Palmarès</a></li>
+                <li><a href="../page1/index.html">Accueil</a></li>
+                <li><a href="../page2/page2.html" class="active">Équipe</a></li>
+                <li><a href="../page3/page3.html">Palmarès</a></li>
+                <li><a href="../page4/page4.html">Histoire</a></li>
+                <li><a href="../page5/page5.html">Légendes</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="composition">
-         <h2> Notre equipe</h2>
+    <!-- ====== Section équipe ====== -->
+    <main class="composition">
+        <!-- Bannière -->
+        <section class="banniere">
+            <div class="banniere-overlay"></div>
+            <div class="banniere-contenu">
+                <h1>Équipe Première – Saison 2025/2026</h1>
+                <p>
+                    Découvrez les joueurs qui portent fièrement les couleurs des <strong>Blues</strong>, 
+                    sous la direction d’<strong>Enzo Maresca</strong>.  
+                    Une équipe jeune, talentueuse et ambitieuse, prête à briller sur toutes les scènes.
+                </p>
+            </div>
+        </section>
 
-         <div class="para">
-             <p>
-                  Le Chelsea Football Club compte actuellement une équipe talentueuse et ambitieuse,
-                  prête à défendre les couleurs bleues dans toutes les compétitions nationales et       internationales.
-             </p>
-             <p>
-                 Sous la direction de <strong>Enzo Maresca</strong>, l’entraîneur principal, et de son staff technique
-                 dévoué, chaque joueur reçoit un accompagnement stratégique pour donner le meilleur sur le terrain.
-             </p>
-             <p>
-                 Découvrez ci-dessous les joueurs qui composent l’effectif de la saison 2025-2026 :
-             </p>
-         </div>
+        <!-- Filtres -->
+        <section class="filtres">
+            <button class="filtre-btn active" data-filtre="tous">Tous</button>
+            <button class="filtre-btn" data-filtre="gardien">Gardiens</button>
+            <button class="filtre-btn" data-filtre="defense">Défenseurs</button>
+            <button class="filtre-btn" data-filtre="milieu">Milieux</button>
+            <button class="filtre-btn" data-filtre="attaque">Attaquants</button>
+        </section>
 
-        <div class="joueurs_conteineur">
+        <!-- Grille des joueurs -->
+        <section class="joueurs_conteneur">
 
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/robert.jpg" alt="Robert Sanchez">
-                <h3>Robert Sanchez  <samp>1</samp></h3>
+            <!-- Gardient De buts -->
+            <div class="joueur" 
+                 data-poste="gardien"
+                 data-nom="Robert Sanchez"
+                 data-postecomplet="Gardien de but"
+                 data-nationalite="Espagnol 🇪🇸"
+                 data-naissance="18 novembre 1997"
+                 data-age="27 ans"
+                 data-taille="1,97 m"
+                 data-debut="2023">
+                <img src="../page3/image/robert.jpg" alt="Robert Sanchez">
+                <div class="overlay">
+                    <h3>Robert Sanchez <span>#1</span></h3>
+                    <p>Gardien de but</p>
+                </div>
             </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/filip.jpg" alt="Filip Jorgensen">
-                <h3>Filip Jorgensen  <samp>12</samp></h3>
+            <div class="joueur" 
+                 data-poste="gardien"
+                 data-nom="Filip Jorgensen"
+                 data-postecomplet="Gardien de but"
+                 data-nationalite="Dannois dn"
+                 data-naissance="19 Avril 2002"
+                 data-age="23 ans"
+                 data-taille="1,92 m"
+                 data-debut="2024">
+                <img src="../page3/image/filip.jpg" alt="Filip Jorgensen">
+                <div class="overlay">
+                    <h3>Filip Jorgensen <span>#12</span></h3>
+                    <p>Gardien de but</p>
+                </div>
             </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/gaga.jpg" alt="Gaga Slonina">
-                <h3>Gaga Slonina <samp>44</samp></h3>
+            <div class="joueur" 
+                 data-poste="gardien"
+                 data-nom="Gaga SLonina"
+                 data-postecomplet="Gardien de but"
+                 data-nationalite="Américain us"
+                 data-naissance="16 mai 2004"
+                 data-age="21 ans"
+                 data-taille="1,93 m"
+                 data-debut="2023">
+                <img src="../page3/image/gaga.jpg" alt="Gaga Slonina">
+                <div class="overlay">
+                    <h3>Gaga Slonina <span>#44</span></h3>
+                    <p>Gardien de but</p>
+                </div>
             </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/cucurella.jpg" alt="Marc Cucurella">
-                <h3>Marc Cucurella  <samp>3</samp></h3>
+
+            <!-- Défenseur -->
+            <div class="joueur" 
+                 data-poste="defense"
+                 data-nom="Marc Cucurella"
+                 data-postecomplet="defenseue / arrère lattéral"
+                 data-nationalite="Espagnole es"
+                 data-naissance="25 juillet 19974"
+                 data-age="27 ans"
+                 data-taille="1,74 m"
+                 data-debut="6 août 2022">
+                <img src="../page3/image/cucurella.jpg" alt="Marc Cucurella">
+                <div class="overlay">
+                    <h3>Marc Cucurella<span>#3</span></h3>
+                    <p>Arrière lattéral / Défenseur</p>
+                </div>
             </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/toosin.jpg" alt="Tosin Adarabioyo">
-                <h3>Tosin Adarabioyo  <samp>4</samp></h3>
+            <div class="joueur" 
+                 data-poste="defense"
+                 data-nom="Tosin Adarabioyo"
+                 data-postecomplet="Défenseur central"
+                 data-nationalite="ANglais an"
+                 data-naissance="24 Semptre 1997"
+                 data-age="28 ans"
+                 data-taille="1,97 m"
+                 data-debut="">
+                <img src="../page3/image/toosin.jpg" alt="Gaga Slonina">
+                <div class="overlay">
+                    <h3>Tosin Adarabioyo <span>#4</span></h3>
+                    <p>Défenseur central</p>
+                </div>
             </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/benoit.jpg" alt="Benoit Badiashile">
-                <h3>Benoit Badiashile  <samp>3</samp></h3>
+            <div class="joueur" 
+                 data-poste="defense"
+                 data-nom="Marc Cucurella"
+                 data-postecomplet="defenseue / arrère lattéral"
+                 data-nationalite="Espagnole es"
+                 data-naissance="25 juillet 19974"
+                 data-age="27 ans"
+                 data-taille="1,74 m"
+                 data-debut="6 août 2022">
+                <img src="../page3/image/gaga.jpg" alt="Gaga Slonina">
+                <div class="overlay">
+                    <h3>Gaga Slonina <span>#44</span></h3>
+                    <p>Gardien de but</p>
+                </div>
             </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/lewi.jpg" alt="Levi Colwill">
-                <h3>Lewi Colwill  <samp>6</samp></h3>
+            <div class="joueur" 
+                 data-poste="defense"
+                 data-nom="Marc Cucurella"
+                 data-postecomplet="defenseue / arrère lattéral"
+                 data-nationalite="Espagnole es"
+                 data-naissance="25 juillet 19974"
+                 data-age="27 ans"
+                 data-taille="1,74 m"
+                 data-debut="6 août 2022">
+                <img src="../page3/image/gaga.jpg" alt="Gaga Slonina">
+                <div class="overlay">
+                    <h3>Gaga Slonina <span>#44</span></h3>
+                    <p>Gardien de but</p>
+                </div>
             </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/hato.jpg" alt="Jorel Hato">
-                <h3>Jorel Hato  <samp>21</samp></h3>
+            <div class="joueur" 
+                 data-poste="defense"
+                 data-nom="Marc Cucurella"
+                 data-postecomplet="defenseue / arrère lattéral"
+                 data-nationalite="Espagnole es"
+                 data-naissance="25 juillet 19974"
+                 data-age="27 ans"
+                 data-taille="1,74 m"
+                 data-debut="6 août 2022">
+                <img src="../page3/image/gaga.jpg" alt="Gaga Slonina">
+                <div class="overlay">
+                    <h3>Gaga Slonina <span>#44</span></h3>
+                    <p>Gardien de but</p>
+                </div>
             </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/trevoh.jpg" alt="Trevoh Chalobah">
-                <h3>Trevoh Chalobah  <samp>23</samp></h3>
+            <div class="joueur" 
+                 data-poste="defense"
+                 data-nom="Marc Cucurella"
+                 data-postecomplet="defenseue / arrère lattéral"
+                 data-nationalite="Espagnole es"
+                 data-naissance="25 juillet 19974"
+                 data-age="27 ans"
+                 data-taille="1,74 m"
+                 data-debut="6 août 2022">
+                <img src="../page3/image/gaga.jpg" alt="Gaga Slonina">
+                <div class="overlay">
+                    <h3>Gaga Slonina <span>#44</span></h3>
+                    <p>Gardien de but</p>
+                </div>
             </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/james.jpg" alt="Reece James">
-                <h3>Reece James <samp>24</samp></h3>
+            <div class="joueur" 
+                 data-poste="defense"
+                 data-nom="Marc Cucurella"
+                 data-postecomplet="defenseue / arrère lattéral"
+                 data-nationalite="Espagnole es"
+                 data-naissance="25 juillet 19974"
+                 data-age="27 ans"
+                 data-taille="1,74 m"
+                 data-debut="6 août 2022">
+                <img src="../page3/image/gaga.jpg" alt="Gaga Slonina">
+                <div class="overlay">
+                    <h3>Gaga Slonina <span>#44</span></h3>
+                    <p>Gardien de but</p>
+                </div>
             </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/gusto.jpg" alt="Malo Gusto">
-                <h3>Malo Gusto  <samp>27</samp></h3>
+            <div class="joueur" 
+                 data-poste="defense"
+                 data-nom="Marc Cucurella"
+                 data-postecomplet="defenseue / arrère lattéral"
+                 data-nationalite="Espagnole es"
+                 data-naissance="25 juillet 19974"
+                 data-age="27 ans"
+                 data-taille="1,74 m"
+                 data-debut="6 août 2022">
+                <img src="../page3/image/gaga.jpg" alt="Gaga Slonina">
+                <div class="overlay">
+                    <h3>Gaga Slonina <span>#44</span></h3>
+                    <p>Gardien de but</p>
+                </div>
             </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/fofana.jpg" alt="Wesley Fofana">
-                <h3>Wesley Fofana  <samp>29</samp></h3>
+            <div class="joueur" 
+                 data-poste="defense"
+                 data-nom="Marc Cucurella"
+                 data-postecomplet="defenseue / arrère lattéral"
+                 data-nationalite="Espagnole es"
+                 data-naissance="25 juillet 19974"
+                 data-age="27 ans"
+                 data-taille="1,74 m"
+                 data-debut="6 août 2022">
+                <img src="../page3/image/gaga.jpg" alt="Gaga Slonina">
+                <div class="overlay">
+                    <h3>Gaga Slonina <span>#44</span></h3>
+                    <p>Gardien de but</p>
+                </div>
             </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/josh.jpg" alt="Josh Acheampong">
-                <h3>Josh Acheampong  <samp>34</samp></h3>
+            <div class="joueur" 
+                 data-poste="defense"
+                 data-nom="Marc Cucurella"
+                 data-postecomplet="defenseue / arrère lattéral"
+                 data-nationalite="Espagnole es"
+                 data-naissance="25 juillet 19974"
+                 data-age="27 ans"
+                 data-taille="1,74 m"
+                 data-debut="6 août 2022">
+                <img src="../page3/image/gaga.jpg" alt="Gaga Slonina">
+                <div class="overlay">
+                    <h3>Gaga Slonina <span>#44</span></h3>
+                    <p>Gardien de but</p>
+                </div>
             </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/enzo.jpg" alt="Enzo Fernandezz">
-                <h3>Enzo Fernandezz  <samp>8</samp></h3>
+
+            <div class="joueur" 
+                 data-poste="milieu"
+                 data-nom="Enzo Fernández"
+                 data-postecomplet="Milieu central"
+                 data-nationalite="Argentin 🇦🇷"
+                 data-naissance="17 janvier 2001"
+                 data-age="24 ans"
+                 data-taille="1,78 m"
+                 data-debut="Pas encore debuté avec l'equipe prémière">
+                <img src="../page3/image/enzo.jpg" alt="Enzo Fernandez">
+                <div class="overlay">
+                    <h3>Enzo Fernandez <span>#8</span></h3>
+                    <p>Milieu central</p>
+                </div>
             </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/essugo.jpg" alt="Dario Essugo">
-                <h3>Dario Essugo  <samp>14</samp></h3>
+
+            <div class="joueur" 
+                 data-poste="attaque"
+                 data-nom="Cole Palmer"
+                 data-postecomplet="Ailier droit / Meneur"
+                 data-nationalite="Anglais 🇬🇧"
+                 data-naissance="6 mai 2002"
+                 data-age="23 ans"
+                 data-taille="1,82 m"
+                 data-debut="2023">
+                <img src="../page3/image/cold.jpg" alt="Cole Palmer">
+                <div class="overlay">
+                    <h3>Cole Palmer <span>#10</span></h3>
+                    <p>Ailier / Meneur</p>
+                </div>
             </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/santos.jpg" alt="Andrey Santos">
-                <h3>Andrey Santos  <samp>17</samp></h3>
+
+        </section>
+    </main>
+
+    <!-- ====== Popup fiche joueur ====== -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-header">
+                <img id="modal-img" src="" alt="">
+                <h2 id="modal-nom"></h2>
+                <p id="modal-poste"></p>
             </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/caicedo.jpg" alt="Moises Caicedo">
-                <h3>Moises Caicedo  <samp>25</samp></h3>
-            </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/lavia.jpg" alt="Romeo Lavia">
-                <h3>Romeo Lavia  <samp>45</samp></h3>
-            </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/pedron.jpg" alt="Pedro Neto">
-                <h3>Pedro Neto  <samp>7</samp></h3>
-            </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/delap.jpg" alt="Liam Delap">
-                <h3>Liam Delap  <samp>9</samp></h3>
-            </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/cold.jpg" alt="Cole Palmer">
-                <h3>Cole Palmer  <samp>10</samp></h3>
-            </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/jamie.jpg" alt="Jami Gttens">
-                <h3>Jamie Gittens  <samp>11</samp></h3>
-            </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/jpedro.jpg" alt="Joao Pedro">
-                <h3>Joao Pedro  <samp>20</samp></h3>
-            </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/tyrique.jpg" alt="Tyrique George">
-                <h3>Tyrique George  <samp>32</samp></h3>
-            </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/marc.jpg" alt="Marc Guiu">
-                <h3>Marc Guiu  <samp>38</samp></h3>
-            </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/facundo.jpg" alt="Facundo Buonanotte">
-                <h3>Facundo Buonanotte  <samp>40</samp></h3>
-            </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/estevao.jpg" alt="Estevao William">
-                <h3>Estevao William  <samp>41</samp></h3>
-            </div>
-            <div class="joueur">
-                <img src="/site_Chealsea/page3/image/alexendro.jpg" alt="Alexjandro Garnacho">
-                <h3>Alexjandro Garnacho <samp>49</samp></h3>
+            <div class="modal-body">
+                <p><strong>Nationalité :</strong> <span id="modal-nationalite"></span></p>
+                <p><strong>Date de naissance :</strong> <span id="modal-naissance"></span></p>
+                <p><strong>Âge :</strong> <span id="modal-age"></span></p>
+                <p><strong>Taille :</strong> <span id="modal-taille"></span></p>
+                <p><strong>Arrivée au club :</strong> <span id="modal-debut"></span></p>
             </div>
         </div>
     </div>
 
+    <!-- ====== Pied de page ====== -->
     <footer class="pied">
-        <p>
-            &copy; 2025 Chelsea FC – Site fan réalisé par OSNH
-        </p>
-        <div class="socilae">
+        <p>&copy; 2025 Chelsea FC – Site fan réalisé par OSNH</p>
+        <div class="sociale">
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
             <a href="#"><i class="fab fa-x-twitter"></i></a>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

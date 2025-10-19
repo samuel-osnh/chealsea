@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+.entete {
+    background-color: #001489;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.entete:hover {
+    background-color: #0023b3;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo img {
+    width: 90px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.navbarlink {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    font-size: 1.2rem;
+}
+
+.navbarlink a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbarlink a.active,
+.navbarlink a:hover {
+    color: #f1c40f;
+}
+
+.navbarlink a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #f1c40f;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.navbarlink a:hover::after,
+.navbarlink a.active::after {
+    width: 100%;
+}
+
+/* ======= Main Article ======= */
+.article-legendes {
+    width: 90%;
+    max-width: 1200px;
+    margin: 150px auto 60px; /* top margin to account for fixed header */
+}
+
+.article-legendes h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #001489;
+    margin-bottom: 50px;
+}
+
+/* ======= Sections Légendes ======= */
+.section-legende {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.section-legende .texte-image {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    min-width: 300px;
+}
+
+.section-legende .texte-image.gauche {
+    flex-direction: row;
+}
+
+.section-legende .texte-image.droite {
+    flex-direction: row-reverse;
+}
+
+.section-legende img {
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-legende img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.section-legende p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* ======= Pied de page ======= */
+.pied {
+    background-color: #001489;
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+}
+
+.pied p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.sociale {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sociale a {
+    color: white;
+    font-size: 22px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.sociale a:hover {
+    color: #f1c40f;
+    transform: scale(1.2);
+}
+
+
+/* ======= Responsive ======= */
+@media (max-width: 1024px) {
+    .section-legende {
+        gap: 20px;
+    }
+
+    .section-legende img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbarlink {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .section-legende {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-legende .texte-image.droite,
+    .section-legende .texte-image.gauche {
+        flex-direction: column;
+    }
+
+    .section-legende img {
+        width: 220px;
+        height: 220px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-legendes h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .section-legende img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .section-legende p {
+        font-size: 1rem;
+    }
+
+    .navbarlink {
+        font-size: 0.9rem;
+        gap: 10px;
+    }
+}
