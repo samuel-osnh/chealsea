@@ -83,7 +83,7 @@ body{
 /* ======== Bannière ======== */
 .banniere {
     position: relative;
-    background: url('/site_Chealsea/page3/image/equipe.jpg') center/cover no-repeat;
+    background: url('../page3/image/chealsea_effectiif_26.jpg') center/cover no-repeat;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -185,22 +185,36 @@ body{
 }
 
 /* ======== Pied de page ======== */
-footer {
-    background: #001489;
-    color: white;
+.pied {
+    background-color: #003399;
+    color: #e7d8d8;
     text-align: center;
-    padding: 15px;
+    padding: 25px 10px;
+    position: relative;
 }
 
-footer .sociale a {
-    color: white;
-    margin: 0 10px;
-    font-size: 20px;
-    transition: 0.3s;
+.pied p {
+    margin-bottom: 10px;
+    font-size: 15px;
 }
 
-footer .sociale a:hover {
-    color: #ffd700;
+
+.sociale {
+    display: flex;
+    color: #878e97;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sociale a {
+    color: #fff;
+    font-size: 22px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.sociale a:hover {
+    color: #f1c40f;
+    transform: scale(1.2);
 }
 /* ======== Modal joueur ======== */
 .modal {

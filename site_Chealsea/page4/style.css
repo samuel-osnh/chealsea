@@ -156,7 +156,7 @@
 
 .pied {
     background-color: #003399;
-    color: #fff;
+    color: #e7d8d8;
     text-align: center;
     padding: 25px 10px;
     position: relative;
@@ -167,6 +167,24 @@
     font-size: 15px;
 }
 
+
+.sociale {
+    display: flex;
+    color: #878e97;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sociale a {
+    color: #fff;
+    font-size: 22px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.sociale a:hover {
+    color: #f1c40f;
+    transform: scale(1.2);
+}
 /* Responsivité */
 @media (max-width: 900px) {
     .texte-image {

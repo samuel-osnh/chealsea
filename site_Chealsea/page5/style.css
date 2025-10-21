@@ -91,63 +91,70 @@
     transition: all 0.3s ease;
 }
 
-/* ======= Main Article ======= */
+/* ======= STYLE TIMELINE POUR LES LÉGENDES ======= */
+
 .article-legendes {
-    width: 90%;
-    max-width: 1200px;
-    margin: 150px auto 60px; /* top margin to account for fixed header */
+  width: 100%;
+  margin-top: 120px;
+  font-family: 'Poppins', sans-serif;
 }
-
-.article-legendes h1 {
+.article-legendes h1{
+    color: #0023b3;
+    margin: 40px;
     text-align: center;
-    font-size: 2.5rem;
-    color: #001489;
-    margin-bottom: 50px;
+    font-size: 3rem;
+    
 }
-
-/* ======= Sections Légendes ======= */
 .section-legende {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 60px;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 40px;
+  padding: 60px 10%;
+  color: #fff;
+  transition: 0.3s ease;
 }
 
-.section-legende .texte-image {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex: 1;
-    min-width: 300px;
+/* Alternance des fonds */
+.section-legende:nth-child(odd) {
+  background: #001489; /* Bleu Chelsea */
+  flex-direction: row;
 }
 
-.section-legende .texte-image.gauche {
-    flex-direction: row;
+.section-legende:nth-child(even) {
+  background: #f5f5f5; /* Blanc cassé */
+  color: #001489;
+  flex-direction: row-reverse;
 }
 
-.section-legende .texte-image.droite {
-    flex-direction: row-reverse;
-}
-
+/* Image */
 .section-legende img {
-    width: 250px;
-    height: 250px;
-    border-radius: 15px;
-    object-fit: cover;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 250px;
+  height: auto;
+  border-radius: 15%;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+/* Texte */
+.section-legende .texte-image p{
+    padding: 5px;
 }
 
-.section-legende img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+.section-legende h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #001489;
 }
 
-.section-legende p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #333;
+.section-legende .texte p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Animation hover */
+.section-legende:hover {
+  transform: scale(1.02);
 }
 
 /* Terrain */
@@ -157,9 +164,11 @@
     max-width: 1700px;
     aspect-ratio: 9/16;
     margin: 20px auto;
-    background: #2e8b57;
+    background: linear-gradient(145deg, #006400, #228B22);
     border: 3px solid white;
     border-radius: 10px;
+    overflow: hidden;
+     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
 /* Lignes de côté */
@@ -230,12 +239,18 @@
     border: 2px solid white;
     box-shadow: 0 0 5px black;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 .player span {
     display: block;
     margin-top: 0.2rem;
     font-size: 0.8rem;
+}
+.player img:hover {
+    transform: scale(1.1);
+    color: #0023b3;
+    cursor: pointer;
 }
 
 /* Position joueurs */
@@ -257,25 +272,28 @@
 
 /* ======= Pied de page ======= */
 .pied {
-    background-color: #001489;
-    color: white;
+    background-color: #003399;
+    color: #e7d8d8;
     text-align: center;
     padding: 25px 10px;
+    position: relative;
 }
 
 .pied p {
     margin-bottom: 10px;
-    font-size: 0.95rem;
+    font-size: 15px;
 }
+
 
 .sociale {
     display: flex;
+    color: #878e97;
     justify-content: center;
     gap: 20px;
 }
 
 .sociale a {
-    color: white;
+    color: #fff;
     font-size: 22px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -287,15 +305,18 @@
 
 
 /* ======= Responsive ======= */
-@media (max-width: 900px) {
-    .section-legende {
-        gap: 20px;
+@media (max-width: 800px) {
+    .article-legendes h1{
+        font-size: 2rem;
     }
-
-    .section-legende img {
-        width: 200px;
-        height: 200px;
-    }
+  .section-legende {
+        flex-direction: column !important;
+        text-align: center;
+   }
+  .section-legende img {
+        width: 180px;
+        height: auto;
+   }
     .menu-toggle {
         display: flex;
     }
@@ -337,7 +358,7 @@
     }
 
     .player img {
-        width: 50%; /* sur petit écran, joueurs visibles */
+        width: 100%; /* sur petit écran, joueurs visibles */
     }
 
     .player span {
