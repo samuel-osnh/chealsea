@@ -5,7 +5,7 @@
     font-family: 'Times New Roman', Times, serif;
 }
 .entete {
-    background-color: #001489;
+    background: linear-gradient(120deg, #f4f4f7, #0033cc, #0a0a0a);
     width: 100%;
     position: fixed;
     top: 0;

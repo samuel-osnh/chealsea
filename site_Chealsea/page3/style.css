@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .entete {
-    background-color: #001489;
+    background: linear-gradient(120deg, #e6e6e9, #0033cc, #0a0a0a);
     width: 100%;
     position: fixed;
     top: 0;
@@ -73,18 +73,21 @@
 .navbarlink a.active::after {
     width: 100%;
 }
-
+body{
+    background: linear-gradient(135deg, #001489, #0a0a0a);
+}
 /* ====== Palmarès ====== */
 .palmares {
     width: 90%;
     max-width: 1200px;
     margin: 180px auto 60px auto;
     text-align: center;
+    
 }
 
 .palmares h1 {
     font-size: 2.5em;
-    color: #003399;
+    color: #f1c40f;
     margin-bottom: 20px;
 }
 
@@ -92,9 +95,50 @@
     font-size: 1.1em;
     max-width: 850px;
     margin: 0 auto 50px auto;
-    color: #444;
+    color: #f1c40f;
     line-height: 1.7;
 }
+.cite {
+  background: linear-gradient(135deg, #001489, #0a0a0a); /* dégradé bleu → noir */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  color: white; /* texte par défaut */
+}
+
+.cite strong {
+  display: block;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #FFD700; /* titre doré */
+}
+
+.cite ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cite li {
+  color: #FFD700;         /* texte doré */
+  font-weight: 600;
+  padding: 6px 0;
+  font-size: 1.1em;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.cite li::before {
+  content: "🏆 ";
+  color: #FFD700;
+}
+
+.cite li:hover {
+  transform: translateX(8px); /* effet de déplacement */
+  color: #fff;               /* le texte devient blanc au survol */
+}
+
+
 
 /* ====== Cartes trophées ====== */
 .trophees {
@@ -139,12 +183,12 @@
 }
 
 .carte-trophee .front h3 {
-    color: #003399;
+    color: #001489;
     font-size: 1.3em;
 }
 
 .carte-trophee .back {
-    background-color: #f0f4ff;
+    background: linear-gradient(120deg, #001489, #0033cc, #0a0a0a);
     transform: rotateY(180deg);
     padding: 20px;
     text-align: left;
@@ -152,13 +196,13 @@
 
 .carte-trophee .back p {
     font-size: 0.95em;
-    color: #333;
+    color: #FFD700;
     margin-bottom: 8px;
 }
 
 .carte-trophee .back span {
     font-style: italic;
-    color: #777;
+    color: #f1c40f;
 }
 
 .carte-trophee:hover .front {

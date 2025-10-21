@@ -5,7 +5,7 @@
     font-family: 'Times New Roman', Times, serif;
 }
 .entete {
-    background-color: #001489;
+    background: linear-gradient(120deg, #ededf0, #0033cc, #0a0a0a);
     width: 100%;
     position: fixed;
     top: 0;
@@ -140,7 +140,13 @@
 .section-legende .texte-image p{
     padding: 5px;
 }
-
+.text_onze{
+    padding: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}
 .section-legende h1 {
   font-size: 1.8rem;
   margin-bottom: 10px;
